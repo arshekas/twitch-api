@@ -4,7 +4,7 @@ import Channels from '../components/Channels/Channels';
 import './Homepage.css'
 function Homepage() {
 
-    const [search, setsearch] = useState('');
+    const [search, setSearch] = useState('');
 
     return (
         <div className="homepage">
@@ -12,7 +12,7 @@ function Homepage() {
                 <input
                     placeholder="Search"
                     value={search}
-                    onChange={(e) => {setsearch(e.target.value)}}
+                    onChange={(e) => {setSearch(e.target.value)}}
                     type="search"
                 />    
                 <SearchIcon />

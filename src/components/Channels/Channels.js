@@ -25,7 +25,7 @@ function Channels({search}) {
     useEffect(() => {
         const fetchData = async () => {
             dispatch(showLoader())
-            const result = await axios.get(`https://api.twitch.tv/helix/search/channels?query=${search}&first=27`, {
+            const result = await axios.get(`https://api.twitch.tv/helix/search/channels?query=${search}&first=32`, {
                 headers: {
                     "Client-ID": "0ng1gnnelqkvguyujea9c1vzjb3a0s",
                     "Authorization": "Bearer " + token
