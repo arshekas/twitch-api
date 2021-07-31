@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
-import Channels from '../components/Channels'
-import Search from '../components/Search'
-
+import SearchIcon from '@material-ui/icons/Search';
+import Channels from '../components/Channels/Channels';
+import './Homepage.css'
 function Homepage() {
 
     const [search, setsearch] = useState('');
 
     return (
         <div className="homepage">
-            <input
-                className="search"
-                placeholder="Search for channels"
-                value={search}
-                onChange={(e) => {setsearch(e.target.value)}}
-                type="search"
-            />        
+            <div className="search">
+                <input
+                    placeholder="Search"
+                    value={search}
+                    onChange={(e) => {setsearch(e.target.value)}}
+                    type="search"
+                />    
+                <SearchIcon />
+            </div>    
             <Channels search={search}/>
         </div>
     )

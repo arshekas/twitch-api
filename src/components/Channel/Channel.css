@@ -10,6 +10,18 @@
     align-items: center;
     margin: 1rem;
 }
+
+.channel:hover {
+    opacity: 0.8;
+}
 .channel img {
     margin-bottom: 1rem;
+}
+
+span {
+    background-color: red;
+    color: white;
+    padding: 2px 4px; 
+    border-radius: 3px;
+    font-size: 0.8rem;
 }

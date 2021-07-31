@@ -1,7 +1,45 @@
 .homepage {
-    /* display: flex;
-    justify-content: space-evenly;
-    align-items: center; */
     width: 90%;
     margin: auto;
+}
+
+.search {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(255,255,255,0.5),rgba(255, 255, 255, 0.5));
+}
+
+.search > input {
+    outline: none;
+    width: 95%;
+    border-radius: 6px 0 0 6px;
+    border: none;
+    box-sizing: border-box;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    background: rgba(194, 189, 189, 0.5);
+}
+
+.search > input:focus {
+    box-sizing:border-box;
+    border: 3px solid #9147FF;
+    background: white;
+    box-sizing: border-box;
+
+}
+.search .MuiSvgIcon-root {
+    background-color: whitesmoke;
+    padding: 0.3rem 0.3rem;
+    font-size: 38px;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    color: silver;
+}
+::placeholder {
+    color: black;
+    font-size: 1rem;
 }

@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addChannels, hideLoader, showLoader } from '../redux/action';
-import Channel from './Channel';
+import { addChannels, hideLoader, showLoader } from '../../redux/action';
+import Channel from '../Channel/Channel';
 import './Channels.css'
-import Loading from './Loading';
+import Loading from '../../Loading/Loading';
 
 function Channels({search}) {
     const [token, settoken] = useState('');
@@ -12,6 +12,7 @@ function Channels({search}) {
     const channels = useSelector(state => state.channels)
     const loading = useSelector(state => state.loading)
 
+    //fetching access token
     useEffect(() => {
         const fetchToken = async () => {
             const result = await axios.post('https://id.twitch.tv/oauth2/token?client_id=0ng1gnnelqkvguyujea9c1vzjb3a0s&client_secret=bhkpy4lu3lu7fryhyqzo44bzihrd01&grant_type=client_credentials')
@@ -20,6 +21,7 @@ function Channels({search}) {
         fetchToken();
     }, [])
 
+    // using acess token and fetch channels according to user search
     useEffect(() => {
         const fetchData = async () => {
             dispatch(showLoader())
@@ -31,16 +33,12 @@ function Channels({search}) {
             })
             dispatch(addChannels(result.data.data))
             dispatch(hideLoader())
-            console.log(channels)
         }
         if(search!=="")
         {
             fetchData();
 
         }
-        // return () => {
-        //     cleanup
-        // }
     }, [search])
       
     return (

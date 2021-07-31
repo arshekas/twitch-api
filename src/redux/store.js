@@ -7,6 +7,7 @@ const persistConfig = {
     key: "channels",
     storage
 };
+
 const pReducer = persistReducer(persistConfig, reducer)
 
 const store = createStore(pReducer)

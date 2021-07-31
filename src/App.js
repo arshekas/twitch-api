@@ -2,13 +2,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Homepage from './pages/Homepage';
-import Channel_Detail from './components/Channel_Detail';
+import Channel_Detail from './components/ChannelDetails/ChannelDetail';
 
 function App() {
   return (
     <div className="App">
         <Router>
-          <Link to="/">Home</Link>
+          <div className="Home">
+              <Link to="/">Home</Link>
+          </div>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/channels/:channel_id" component={Channel_Detail} />
         </Router>
